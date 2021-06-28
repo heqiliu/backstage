@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>迷礼商城_管理后台</title>
+
+		<script src="../common/commonCss.js"></script>
+	</head>
+	<body>
+		<div class="x-body">
+			<form class="layui-form">
+				<div class="layui-form-item ">
+					<label for="kdgs" class="layui-form-label">快递公司<span class="x-red"> *</span></label>
+					<div class="layui-input-block ">
+						<input type="text" name="kdgs" autocomplete="off" class="layui-input" maxlength="6" placeholder="请输入快递公司" lay-reqtext="快递公司是必填项，岂能为空？">
+					</div>
+				</div>
+				
+				<div class="layui-form-item ">
+					<label for="kdkh" class="layui-form-label">快递单号<span class="x-red"> *</span></label>
+					<div class="layui-input-block ">
+						<input type="text" name="kdkh" autocomplete="off" class="layui-input" maxlength="20" placeholder="请输入快递单号" lay-reqtext="快递单号是必填项，岂能为空？">
+					</div>
+				</div>
+
+				<div class="layui-form-item ">
+					<div class="layui-input-block ">
+						<button type="reset " class="layui-btn layui-btn-primary ">重置</button>
+						<button type="submit" class="layui-btn" lay-submit="" lay-filter="simcardFHSubmit">立即提交</button>
+					</div>
+				</div>
+			</form>
+		</div>
+		<script src="../common/commonJs.js"></script>
+
+		<script src="../js/simcardFH.js"></script>
+	</body>
+</html>

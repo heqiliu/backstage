@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>迷礼商城_管理后台</title>
+
+		<script src="../common/commonCss.js"></script>
+		<style>
+			.layui-form-select dl{
+				height: 160px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="x-body">
+			<form class="layui-form">
+				<div class="layui-form-item ">
+					<label for="ggmc" class="layui-form-label">规格名称<span class="x-red"> *</span></label>
+					<div class="layui-input-block">
+						<input type="text" name="ggmc" autocomplete="off" maxlength="16" lay-verify="required" onkeyup="value=value.replace(/[^\w\u4E00-\u9FA5]/g, '')" lay-reqtext="规格名称是必填项，岂能为空？" placeholder="请输入规格名称" class="layui-input">
+					</div>
+				</div>
+				
+				<div class="layui-form-item ">
+					<label for="ggxsmc" class="layui-form-label" style="width: 99px;margin-left: -20px;">APP显示名称<span class="x-red"> *</span></label>
+					<div class="layui-input-block">
+						<input type="text" name="ggxsmc" autocomplete="off" maxlength="16" lay-verify="required" onkeyup="this.value=this.value.replace(/[^\u4e00-\u9fa5]/g,'')" lay-reqtext="APP显示名称是必填项，岂能为空？" placeholder="请输入APP显示名称" class="layui-input">
+					</div>
+				</div>
+				
+				<div class="layui-form-item">
+					<label for="spflid" class="layui-form-label">分类名称<span class="x-red"> *</span></label>
+					<div class="layui-input-block">
+						<select name="spflid" lay-filter="spflidSelect"></select>
+					</div>
+				</div>
+				
+				<div class="layui-form-item ">
+					<label for="bz" class="layui-form-label">备注</label>
+					<div class="layui-input-block">
+						<textarea name="bz" rows="2" placeholder="请输入备注" class="layui-textarea"></textarea>
+					</div>
+				</div>
+
+				<div class="layui-form-item ">
+					<div class="layui-input-block ">
+						<button type="reset " class="layui-btn layui-btn-primary ">重置</button>
+						<button type="submit" class="layui-btn" lay-submit="" lay-filter="zdSpggAddSubmit">立即提交</button>
+					</div>
+				</div>
+			</form>
+		</div>
+		<script src="../common/commonJs.js"></script>
+		
+		<script src="../js/zdSpggAdd.js"></script>
+	</body>
+</html>

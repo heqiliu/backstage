@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>迷礼商城_管理后台</title>
+
+		<script src="../common/commonCss.js"></script>
+	</head>
+	<body>
+		<div class="x-body">
+			<form class="layui-form">
+				<div class="layui-form-item ">
+					<label for="spflmc" class="layui-form-label">分类名称<span class="x-red"> *</span></label>
+					<div class="layui-input-block">
+						<input type="text" name="spflmc" autocomplete="off" maxlength="10" lay-verify="required" onkeyup="this.value=this.value.replace(/[^\u4e00-\u9fa5]/g,'')" lay-reqtext="分类名称是必填项，岂能为空？" placeholder="请输入分类名称" class="layui-input">
+					</div>
+				</div>
+				
+				<div class="layui-form-item">
+					<label for="img" class="layui-form-label" style="display: flex;">分类小图片<span class="x-red"> *</span></label>
+					<div class="layui-input-block" style="display: flex;">
+						<input type="text" id="icon_url" autocomplete="off" maxlength="255" placeholder="分类小图片" class="layui-input">
+						<button type="button" class="layui-btn" id="iconURL">
+						  <i class="layui-icon">&#xe67c;</i>上传图片
+						</button>
+					</div>
+				</div>
+				
+				<div class="layui-form-item ">
+					<div class="layui-input-block ">
+						<button type="reset " class="layui-btn layui-btn-primary ">重置</button>
+						<button type="submit" class="layui-btn" lay-submit="" lay-filter="spflAddSubmit">立即提交</button>
+					</div>
+				</div>
+			</form>
+		</div>
+		<script src="../common/commonJs.js"></script>
+		
+		<script src="../js/spflAdd.js"></script>
+	</body>
+</html>

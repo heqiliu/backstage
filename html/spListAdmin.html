@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>迷礼商城_管理后台</title>
+
+		<script src="../common/commonCss.js"></script>
+		<!--设置 layui-table-fixed 把z-index 删除-->
+		<style>
+		    /* 防止下拉框的下拉列表被隐藏---必须设置  原.layui-table-cell {overflow: visible;} */
+		    
+		    .laytable-cell-1-0-9 {
+		        overflow: visible;
+		    }
+		    
+		    td .layui-form-select {
+		        margin-top: -10px;
+		        margin-left: -15px;
+		        margin-right: -15px;
+		    }
+		</style>
+	</head>
+	<body>
+		<div class="x-nav">
+			<span class="layui-breadcrumb">
+			<a href="">商品管理</a>
+			<a>
+			  <cite>商品列表</cite></a>
+		  </span>
+			<a class="layui-btn layui-btn-primary layui-btn-small" style="line-height:1.6em;margin-top:3px;float:right" href="javascript:location.replace(location.href);" title="刷新">
+				<i class="layui-icon" style="line-height:38px">&#xe669;</i></a>
+		</div>
+		<div class="x-body">
+			<div style="display: flex;">
+				<form class="layui-form">
+					<div class="layui-inline">
+						<div class="layui-input-inline">
+							<input type="text" name="spmc" placeholder="请输入商品名称" autocomplete="off" class="layui-input">
+						</div>
+					</div>
+					
+					<div class="layui-inline">
+						<div class="layui-input-inline">
+							<button class="layui-btn" lay-submit="" lay-filter="spSearch"><i class="layui-icon">&#xe615;</i></button>
+							<button type="reset" class="layui-btn layui-btn-primary" onclick="Refresh()">重置</button>
+						</div>
+					</div>
+				</form>
+				<button class="layui-btn data-add-btn" id="spAdd" style="margin-left: 15px;"><i class="layui-icon"></i>添加</button>
+			</div>
+			
+			<table class="layui-hide" id="spInfo" lay-filter="spID"></table>
+			
+			<script type="text/html" id="spgg1mcTpl">
+				{{# if(d.spgg1 == ''){ }}
+					<spen>无规格</spen>
+				{{# } else { }}
+					<spen>{{d.spgg1}}</spen>
+				{{# } }}
+			</script>
+			
+			<script type="text/html" id="spgg2mcTpl">
+				{{# if(d.spgg2 == ''){ }}
+					<spen>无规格</spen>
+				{{# } else { }}
+					<spen>{{d.spgg2}}</spen>
+				{{# } }}
+			</script>
+			
+			<script type="text/html" id="spgg3mcTpl">
+				{{# if(d.spgg3 == ''){ }}
+					<spen>无规格</spen>
+				{{# } else { }}
+					<spen>{{d.spgg3}}</spen>
+				{{# } }}
+			</script>
+	
+			<script type="text/html" id="spztmcSelect">
+				{{# if(d.sytj == 0){ }}
+					<select name="spztmc" lay-filter="spztmc"></select>
+				{{# } else { }}
+					<select name="spztmc" lay-filter="spztmc" style="cursor:not-allowed;background-color:#D3D3D3;" disabled></select>
+				{{# } }}
+			</script>
+			
+			<script type="text/html" id="cz">
+				{{# if(d.spztid == 4){ }}
+					<input type="checkbox" name="sytj" value="{{d.sytj}}" title="推荐" lay-filter="spSwhSytj" {{ d.sytj==1 ? 'checked' : '' }}>&nbsp;&nbsp;
+					
+					<button type="button" class="layui-btn layui-btn-sm" style="cursor:not-allowed;background-color:#D3D3D3;" disabled>
+						<a href="../html/spJgtzListAdmin.html?spid={{d.spid}}&&spmc={{d.spmc}}" style="color:#ffffff" target="_self">级别价格</a>
+					</button>
+					
+					<button type="button" class="layui-btn layui-btn-sm layui-btn-normal" style="cursor:not-allowed;background-color:#D3D3D3;" disabled>
+						<a href="../html/spImgListAdmin.html?spid={{d.spid}}&&spmc={{d.spmc}}" style="color:#ffffff" target="_self">轮播图</a>
+					</button>
+				{{# } else { }}
+					<input type="checkbox" name="sytj" value="{{d.sytj}}" title="推荐" lay-filter="spSwhSytj" disabled>&nbsp;&nbsp;
+						
+					<button type="button" class="layui-btn layui-btn-sm">
+						<a href="../html/spJgtzListAdmin.html?spid={{d.spid}}&&spmc={{d.spmc}}" style="color:#ffffff" target="_self">级别价格</a>
+					</button>
+					
+					<button type="button" class="layui-btn layui-btn-sm layui-btn-normal">
+						<a href="../html/spImgListAdmin.html?spid={{d.spid}}&&spmc={{d.spmc}}" style="color:#ffffff" target="_self">轮播图</a>
+					</button>
+				{{# } }}
+				
+				{{# if(d.spztid == 0){ }}
+					<button type="button" class="layui-btn layui-btn-sm layui-btn-danger" lay-event="spDelete">删除</button>
+				{{# } else { }}
+					<button type="button" class="layui-btn layui-btn-sm layui-btn-danger" lay-event="spDelete" style="cursor:not-allowed;background-color:#D3D3D3;" disabled>删除</button>
+				{{# } }}
+			</script>
+			
+			<script type="text/html" id="icon_url">
+				<img src="{{d.icon_url}}" style="width: 100%;height: 100%">
+			</script>
+
+		</div>
+		<br/>
+		<div class="footer">
+			<div class="copyright" style="color: aliceblue;">© 2021 -
+				<script>
+					var time = new Date();
+					var year = time.getFullYear();
+					document.write(year);
+				</script> 迷礼商城 版权所有
+			</div>
+		</div>
+		<script src="../common/commonJs.js"></script>
+
+		<script src="../js/spListAdmin.js"></script>
+	</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>迷礼商城_管理后台</title>
+
+		<script src="../common/commonCss.js"></script>
+	</head>
+	<body>
+		<div class="x-nav">
+			<span class="layui-breadcrumb">
+				<a href="">订单管理</a>
+				<a>
+					<cite>商品订单明细列表</cite>
+				</a>
+			</span>
+			<a class="layui-btn layui-btn-primary layui-btn-small" style="line-height:1.6em;margin-top:3px;float:right" href="javascript:location.replace(location.href);" title="刷新">
+				<i class="layui-icon" style="line-height:38px">&#xe669;</i>
+			</a>
+		</div>
+		<div class="x-body">
+			<table class="layui-hide" id="ddmxAdminInfo" lay-filter="ddmxAdminID"></table>
+			
+			<script type="text/html" id="ggmx1mcTpl">
+				{{# if(d.ggmx1mc == '' ||d.ggmx1mc == null){ }}
+					<spen>无规格</spen>
+				{{# } else { }}
+					<spen>{{d.ggmx1mc}}</spen>
+				{{# } }}
+			</script>
+			
+			<script type="text/html" id="ggmx2mcTpl">
+				{{# if(d.ggmx2mc == '' ||d.ggmx2mc == null){ }}
+					<spen>无规格</spen>
+				{{# } else { }}
+					<spen>{{d.ggmx2mc}}</spen>
+				{{# } }}
+			</script>
+			
+			<script type="text/html" id="ggmx3mcTpl">
+				{{# if(d.ggmx3mc == '' ||d.ggmx3mc == null){ }}
+					<spen>无规格</spen>
+				{{# } else { }}
+					<spen>{{d.ggmx3mc}}</spen>
+				{{# } }}
+			</script>
+			
+			<script type="text/html" id="ztmcTpl">
+				{{# if(d.ztmc == '新订单'){ }}
+					<spen style = 'color: #000000;'>新订单</spen>
+				{{# } else if(d.ztmc == '已付款'){ }}
+					<spen style = 'color: #077E37;'>已付款</spen>
+				{{# } else if(d.ztmc == '已发货'){ }}
+					<spen style = 'color: #0DC316;'>已发货</spen>
+				{{# } else if(d.ztmc == '已完成'){ }}
+					<spen style = 'color: #00ff00;'>已完成</spen>
+				{{# } }}
+			</script>
+			
+			<script type="text/html" id="icon_url">
+				<img src="{{d.icon_url}}" style="width: 100%;height: 100%">
+			</script>
+		</div>
+		<br />
+		<div class="footer">
+			<div class="copyright" style="color: aliceblue;">© 2021 -
+				<script>
+					var time = new Date();
+					var year = time.getFullYear();
+					document.write(year);
+				</script> 迷礼商城 版权所有
+			</div>
+		</div>
+		<script src="../common/commonJs.js"></script>
+
+		<script src="../js/spddMxAdmin.js"></script>
+	</body>
+</html>

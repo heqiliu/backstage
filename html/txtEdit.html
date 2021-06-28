@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>迷礼商城_管理后台</title>
+
+		<script src="../common/commonCss.js"></script>
+	</head>
+	<body>
+		<div class="x-body">
+			<form class="layui-form">
+				<div class="layui-form-item ">
+					<label for="bz" class="layui-form-label">名称</label>
+					<div class="layui-input-block ">
+						<input type="text" name="bz" autocomplete="off" class="layui-input" style="cursor:not-allowed;" disabled>
+					</div>
+				</div>
+
+				<div class="layui-form-item layui-form-text ">
+					<label for="txt" class="layui-form-label">说明</label>
+					<div class="layui-input-block">
+						<textarea name="txt" class="layui-textarea"></textarea>
+					</div>
+				</div>
+
+				<div class="layui-form-item ">
+					<div class="layui-input-block ">
+						<button type="reset " class="layui-btn layui-btn-primary ">重置</button>
+						<button type="submit" class="layui-btn" lay-submit="" lay-filter="txtEditSubmit">立即提交</button>
+					</div>
+				</div>
+			</form>
+		</div>
+		<script src="../common/commonJs.js"></script>
+		
+		<script src="../js/txtEdit.js"></script>
+	</body>
+</html>

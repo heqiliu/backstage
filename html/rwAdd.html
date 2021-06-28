@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>迷礼商城_管理后台</title>
+
+		<script src="../common/commonCss.js"></script>
+	</head>
+	<body>
+		<div class="x-body">
+			<form class="layui-form">
+				<div class="layui-form-item ">
+					<label class="layui-form-label">任务名称<span class="x-red"> *</span></label>
+					<div class="layui-input-block">
+						<input type="text" name="rwmc" autocomplete="off" maxlength="50" lay-verify="required" onkeyup="this.value=this.value.replace(/[^\u4e00-\u9fa5]/g,'')" lay-reqtext="任务名称是必填项，岂能为空？" placeholder="请输入任务名称" class="layui-input">
+					</div>
+				</div>
+				
+				<div class="layui-form-item ">
+					<label class="layui-form-label">单价<span class="x-red"> *</span></label>
+					<div class="layui-input-block" style="display: flex;">
+						<input type="text" name="price" autocomplete="off" maxlength="8" lay-verify="required" onkeyup="value=value.replace(/[^\d.]/g,'')" lay-reqtext="单价是必填项，岂能为空？" placeholder="请输入单价(元)" class="layui-input">
+						<span style="padding: 7px;text-align: center;background-color: #eee;">元</span>
+					</div>
+				</div>
+				
+				<div class="layui-form-item">
+					<label class="layui-form-label">小图片<span class="x-red"> *</span></label>
+					<div class="layui-input-block" style="display: flex;">
+						<input type="text" id="icon_url" autocomplete="off" maxlength="255" placeholder="小图片" class="layui-input">
+						<button type="button" class="layui-btn" id="iconURL">
+						  <i class="layui-icon">&#xe67c;</i>上传图片
+						</button>
+					</div>
+				</div>
+				
+				<div class="layui-form-item">
+					<label class="layui-form-label">图片一<span class="x-red"> *</span></label>
+					<div class="layui-input-block" style="display: flex;">
+						<input type="text" id="img1" autocomplete="off" maxlength="255" placeholder="图片一" class="layui-input">
+						<button type="button" class="layui-btn" id="img1URL">
+						  <i class="layui-icon">&#xe67c;</i>上传图片
+						</button>
+					</div>
+				</div>
+				
+				<div class="layui-form-item">
+					<label class="layui-form-label">图片二</label>
+					<div class="layui-input-block" style="display: flex;">
+						<input type="text" id="img2" autocomplete="off" maxlength="255" placeholder="图片二" class="layui-input">
+						<button type="button" class="layui-btn" id="img2URL">
+						  <i class="layui-icon">&#xe67c;</i>上传图片
+						</button>
+					</div>
+				</div>
+				
+				<div class="layui-form-item">
+					<label class="layui-form-label">图片三</label>
+					<div class="layui-input-block" style="display: flex;">
+						<input type="text" id="img3" autocomplete="off" maxlength="255" placeholder="图片三" class="layui-input">
+						<button type="button" class="layui-btn" id="img3URL">
+						  <i class="layui-icon">&#xe67c;</i>上传图片
+						</button>
+					</div>
+				</div>
+				
+				<div class="layui-form-item layui-form-text ">
+					<label class="layui-form-label">任务说明<span class="x-red"> *</span></label>
+					<div class="layui-input-block">
+						<textarea name="rwsm" rows="2" maxlength="250" lay-verify="required" lay-reqtext="任务说明是必填项，岂能为空？" placeholder="请输入任务说明" class="layui-textarea"></textarea>
+					</div>
+				</div>
+				
+				<div class="layui-form-item layui-form-text ">
+					<label class="layui-form-label">提交说明<span class="x-red"> *</span></label>
+					<div class="layui-input-block">
+						<textarea name="tjsm" rows="2" maxlength="250" lay-verify="required" lay-reqtext="提交说明是必填项，岂能为空？" placeholder="请输入提交说明" class="layui-textarea"></textarea>
+					</div>
+				</div>
+				
+				<div class="layui-form-item ">
+					<div class="layui-input-block ">
+						<button type="reset " class="layui-btn layui-btn-primary ">重置</button>
+						<button type="submit" class="layui-btn" lay-submit="" lay-filter="rwAddSubmit">立即提交</button>
+					</div>
+				</div>
+			</form>
+		</div>
+		<script src="../common/commonJs.js"></script>
+		
+		<script src="../js/rwAdd.js"></script>
+	</body>
+</html>

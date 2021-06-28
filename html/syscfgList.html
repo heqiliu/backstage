@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>真实汇_管理后台</title>
+		
+		<script src="../common/commonCss.js"></script>
+	</head>
+	<body>
+		<div class="x-nav">
+			<span class="layui-breadcrumb">
+				<a href="">配置管理</a>
+				<a>
+					<cite>其它配置</cite>
+				</a>
+			</span>
+			<a class="layui-btn layui-btn-primary layui-btn-small" style="line-height:1.6em;margin-top:3px;float:right" href="javascript:location.replace(location.href);" title="刷新">
+				<i class="layui-icon" style="line-height:38px">&#xe669;</i>
+			</a>
+		</div>
+		<div class="x-body">
+
+			<table class="layui-hide" id="syscfgInfo" lay-filter="syscfgID"></table>
+
+		</div>
+		<br/>
+
+		<div class="footer">
+			<div class="copyright" style="color: aliceblue;">© 2021 -
+				<script>
+					var time = new Date();
+					var year = time.getFullYear();
+					document.write(year);
+				</script> 真实汇 版权所有
+			</div>
+		</div>
+
+		<script src="../common/commonJs.js"></script>
+		
+		<script src="../js/syscfgList.js"></script>
+	</body>
+</html>

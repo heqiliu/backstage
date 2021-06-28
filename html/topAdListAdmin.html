@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>迷礼商城_管理后台</title>
+
+		<script src="../common/commonCss.js"></script>
+	</head>
+	<body>
+		<div class="x-nav">
+			<span class="layui-breadcrumb">
+				<a href="">系统管理</a>
+				<a>
+					<cite>轮播图列表</cite>
+				</a>
+			</span>
+			<a class="layui-btn layui-btn-primary layui-btn-small" style="line-height:1.6em;margin-top:3px;float:right" href="javascript:location.replace(location.href);" title="刷新">
+				<i class="layui-icon" style="line-height:38px">&#xe669;</i>
+			</a>
+		</div>
+		<div class="x-body">
+			<!-- <button class="layui-btn" onclick="x_admin_show('添加轮播图','./topAdAdd.html')"><i class="layui-icon"></i>添加</button> -->
+			<button class="layui-btn data-add-btn" id="addTopAdd"><i class="layui-icon"></i>添加</button>
+
+			<table class="layui-hide" id="topAdInfo" lay-filter="topAdID"></table>
+			
+			<script type="text/html" id="topAdZtUpdTpl">
+				<input type="checkbox" name="ztid" value="{{d.ztid}}" lay-skin="switch" lay-text="上架|下架" lay-filter="ztidSwh" {{ d.ztid == 0 ? 'checked' : '' }}>
+			</script>
+
+			<script type="text/html" id="topCz">
+				<button type="button" class="layui-btn layui-btn-sm layui-btn-danger" lay-event="topAdDelRevise">删除</button>
+				<button type="button" class="layui-btn layui-btn-sm layui-btn-normal" lay-event="topAdEdit">编缉</button>
+			</script>
+			
+			<script type="text/html" id="pic_url">
+			    <img src="{{d.pic_url}}"style="width: 100%;height: 100%">
+			</script>
+
+		</div>
+		<br/>
+
+		<div class="footer">
+			<div class="copyright" style="color: aliceblue;">© 2021 -
+				<script>
+					var time = new Date();
+					var year = time.getFullYear();
+					document.write(year);
+				</script> 迷礼商城 版权所有
+			</div>
+		</div>
+
+		<script src="../common/commonJs.js"></script>
+		
+		<script src="../js/topAdListAdmin.js"></script>
+	</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>迷礼商城_管理后台</title>
+
+		<script src="../common/commonCss.js"></script>
+		<style>
+		    /* 防止下拉框的下拉列表被隐藏---必须设置  原.layui-table-cell {overflow: visible;} */
+		    .laytable-cell-1-0-9 {
+		        overflow: visible;
+		    }
+		    
+		    td .layui-form-select {
+		        margin-top: -10px;
+		        margin-left: -15px;
+		        margin-right: -15px;
+		    }
+		</style>
+	</head>
+	<body>
+		<div class="x-nav">
+			<span class="layui-breadcrumb">
+			<a href="">订单管理</a>
+			<a>
+			  <cite>商品订单列表</cite></a>
+		  </span>
+			<a class="layui-btn layui-btn-primary layui-btn-small" style="line-height:1.6em;margin-top:3px;float:right" href="javascript:location.replace(location.href);" title="刷新">
+				<i class="layui-icon" style="line-height:38px">&#xe669;</i></a>
+		</div>
+		<div class="x-body">
+			<form class="layui-form" action="">
+				<div class="layui-inline">
+					<div class="layui-input-inline">
+						<input type="text" name="sjr" placeholder="请输入姓名" autocomplete="off" class="layui-input">
+					</div>
+				</div>
+				
+				<div class="layui-inline">
+					<div class="layui-input-inline">
+						<input type="text" name="sjrdh" placeholder="请输入手机号码" onkeyup="this.value=this.value.replace(/\D/g,'')" autocomplete="off" class="layui-input">
+					</div>
+				</div>
+				
+				<div class="layui-inline">
+					<div class="layui-input-inline">
+						<button class="layui-btn" lay-submit="" lay-filter="search"><i class="layui-icon">&#xe615;</i></button>
+						<button type="reset" class="layui-btn layui-btn-primary" onclick="Refresh()">重置</button>
+					</div>
+				</div>
+			</form>
+
+			<table class="layui-hide" id="spddInfo" lay-filter="spddID"></table>
+			
+			<script type="text/html" id="spZfddSelect">
+				{{# if(d.ztmc == '已完成'){ }}
+					<select name="spZfddZt" lay-filter="spZfddZt" style="cursor:not-allowed;background-color:#D3D3D3;" disabled></select>
+				{{# } else { }}
+					<select name="spZfddZt" lay-filter="spZfddZt"></select>
+				{{# } }}
+				
+			</script>
+			
+			<script type="text/html" id="spddCz">
+				{{# if(d.ztmc == '已付款'){ }}
+					<button type="button" class="layui-btn layui-btn-sm layui-btn-normal" lay-event="spddFhRevise">发货</button>
+				{{# } else { }}
+					<button type="button" class="layui-btn layui-btn-sm layui-btn-normal" lay-event="spddFhRevise" style="cursor:not-allowed;background-color:#D3D3D3;" disabled>发货</button>
+				{{# } }}
+			</script>
+
+		</div>
+		<br/>
+		<div class="footer">
+			<div class="copyright" style="color: aliceblue;">© 2021 -
+				<script>
+					var time = new Date();
+					var year = time.getFullYear();
+					document.write(year);
+				</script> 迷礼商城 版权所有
+			</div>
+		</div>
+		<script src="../common/commonJs.js"></script>
+
+		<script src="../js/spddList.js"></script>
+	</body>
+</html>

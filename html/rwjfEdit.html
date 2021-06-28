@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>迷礼商城_管理后台</title>
+
+		<script src="../common/commonCss.js"></script>
+	</head>
+	<body>
+		<div class="x-body">
+			<form class="layui-form">
+				<div class="layui-form-item ">
+					<label class="layui-form-label">积分<span class="x-red"> *</span></label>
+					<div class="layui-input-block ">
+						<input type="text" name="xjjf" autocomplete="off" class="layui-input" onkeyup="this.value=this.value.replace(/\D/g,'')" maxlength="10" placeholder="请输入积分" lay-reqtext="积分是必填项，岂能为空？">
+					</div>
+				</div>
+				
+				<div class="layui-form-item ">
+					<label class="layui-form-label">购物积分<span class="x-red"> *</span></label>
+					<div class="layui-input-block ">
+						<input type="text" name="gwjf" autocomplete="off" class="layui-input" onkeyup="this.value=this.value.replace(/\D/g,'')" maxlength="10" placeholder="请输入购物积分" lay-reqtext="购物积分是必填项，岂能为空？">
+					</div>
+				</div>
+				
+				<div class="layui-form-item ">
+					<div class="layui-input-block ">
+						<button type="reset " class="layui-btn layui-btn-primary ">重置</button>
+						<button type="submit" class="layui-btn" lay-submit="" lay-filter="rwjfEditSubmit">立即提交</button>
+					</div>
+				</div>
+			</form>
+		</div>
+		<script src="../common/commonJs.js"></script>
+
+		<script src="../js/rwjfEdit.js"></script>
+	</body>
+</html>

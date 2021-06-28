@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>迷礼商城_管理后台</title>
+
+		<script src="../common/commonCss.js"></script>
+	</head>
+	<body>
+		<div class="x-body">
+			<form class="layui-form">
+				<div class="layui-form-item ">
+					<label for="text" class="layui-form-label">标题<span class="x-red"> *</span></label>
+					<div class="layui-input-block">
+						<input type="text" name="text" autocomplete="off" maxlength="20" lay-verify="required" lay-reqtext="标题是必填项，岂能为空？" placeholder="请输入名称" class="layui-input">
+					</div>
+				</div>
+
+				<div class="layui-form-item ">
+					<label for="herf" class="layui-form-label">网址</label>
+					<div class="layui-input-block">
+						<input type="text" name="herf" autocomplete="off" maxlength="50" placeholder="请输入网址" class="layui-input">
+					</div>
+				</div>
+
+				<div class="layui-form-item ">
+					<label for="pic_url" class="layui-form-label">轮播图URL<span class="x-red"> *</span></label>
+					<div class="layui-input-block">
+						<input type="text" id="pic_url" autocomplete="off" placeholder="请输入网址" class="layui-input" disabled><br />
+						<div class="layui-upload-drag" id="picUrl">
+							<i class="layui-icon"></i>
+							<p>点击上传，或将文件拖拽到此处</p>
+							<div class="layui-hide" id="uploadDemoView">
+								<hr>
+								<img alt="上传成功后渲染" style="max-width: 196px">
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="layui-form-item ">
+					<div class="layui-input-block ">
+						<button type="reset " class="layui-btn layui-btn-primary ">重置</button>
+						<button type="submit" class="layui-btn" lay-submit="" lay-filter="topAdAddSubmit">立即提交</button>
+					</div>
+				</div>
+			</form>
+		</div>
+		<script src="../common/commonJs.js"></script>
+		
+		<script src="../js/topAdAdd.js"></script>
+	</body>
+</html>

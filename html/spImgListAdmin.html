@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>迷礼商城_管理后台</title>
+
+		<script src="../common/commonCss.js"></script>
+		
+		<style>
+			.layui-breadcrumb a {
+			    color: #0055ff!important;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="x-nav">
+			<span class="layui-breadcrumb">
+				<a href="spListAdmin.html">商品列表</a>
+				<a>
+					<cite><b style="color: #C9302C;"><font id="DDID"></font></b>&nbsp;轮播图列表</cite>
+				</a>
+			</span>
+			<a class="layui-btn layui-btn-primary layui-btn-small" style="line-height:1.6em;margin-top:3px;float:right" href="javascript:location.replace(location.href);" title="刷新">
+				<i class="layui-icon" style="line-height:38px">&#xe669;</i>
+			</a>
+		</div>
+		<div class="x-body">
+			
+			<table class="layui-hide" id="spImgAdminInfo" lay-filter="spImgAdminID"></table>
+			
+			<script type="text/html" id="spidTpl">
+				{{# if(d.spid == GetQueryString("spid")){ }}
+					<spen>{{decodeURI(GetQueryString("spmc"))}}</spen>
+				{{# } else { }}
+					<spen>无商品</spen>
+				{{# } }}
+			</script>
+			
+			<script type="text/html" id="url">
+				{{# if(d.url === undefined || d.url === '' || d.url === null){ }} 
+					暂无图片 
+				{{# } else { }}
+					<img src="{{d.url}}" style="display:none" id="userImg">
+				{{# } }}
+			</script>
+			
+			<script type="text/html" id="cz">
+				<button type="button" class="layui-btn layui-btn-sm layui-btn-normal" lay-event="spImgEdit">编辑</button>
+				
+				{{# if(d.url != ''){ }}
+					<button type="button" class="layui-btn layui-btn-sm layui-btn-danger" lay-event="spImgDel">删除</button>
+				{{# } else { }}
+					<button type="button" class="layui-btn layui-btn-sm layui-btn-danger" lay-event="spImgDel" style="cursor:not-allowed;background-color:#D3D3D3;" disabled>删除</button>
+				{{# } }}
+			</script>
+		</div>
+		<br/>
+		<div class="footer">
+			<div class="copyright" style="color: aliceblue;">© 2021 -
+				<script>
+					var time = new Date();
+					var year = time.getFullYear();
+					document.write(year);
+				</script> 迷礼商城 版权所有
+			</div>
+		</div>
+		<script src="../common/commonJs.js"></script>
+
+		<script src="../js/spImgListAdmin.js"></script>
+	</body>
+</html>

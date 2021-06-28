@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>迷礼商城_管理后台</title>
+
+		<script src="../common/commonCss.js"></script>
+	</head>
+	<body>
+		<div class="x-body">
+			<form class="layui-form">
+				<div class="layui-form-item">
+					<label for="spmc" class="layui-form-label">商品名称</label>
+					<div class="layui-input-block" style="display: flex;">
+						<input type="text" name="spmc" autocomplete="off" class="layui-input" style="cursor:not-allowed;background-color:#ffffff;" disabled>
+					</div>
+				</div>
+				
+				<div class="layui-form-item">
+					<label for="图片url" class="layui-form-label">URL<span class="x-red"> *</span></label>
+					<div class="layui-input-block" style="display: flex;">
+						<input type="text" id="url" autocomplete="off" maxlength="250" placeholder="请上传图片URL" class="layui-input">
+						<button type="button" class="layui-btn" id="URL">
+						  <i class="layui-icon">&#xe67c;</i>上传图片
+						</button>
+					</div>
+				</div>
+				
+				<div class="layui-form-item layui-form-text ">
+					<label for="bz" class="layui-form-label">备注说明</label>
+					<div class="layui-input-block">
+						<textarea name="bz" rows="2" placeholder="请输入备注说明" class="layui-textarea" maxlength="250"></textarea>
+					</div>
+				</div>
+				
+				<div class="layui-form-item ">
+					<div class="layui-input-block ">
+						<button type="reset " class="layui-btn layui-btn-primary ">重置</button>
+						<button type="submit" class="layui-btn" lay-submit="" lay-filter="spImgEditSubmit">立即提交</button>
+					</div>
+				</div>
+			</form>
+		</div>
+		<script src="../common/commonJs.js"></script>
+		
+		<script src="../js/spImgEdit.js"></script>
+	</body>
+</html>

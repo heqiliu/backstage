@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>迷礼商城_管理后台</title>
+
+		<script src="../common/commonCss.js"></script>
+	</head>
+	<body>
+		<div class="x-nav">
+			<span class="layui-breadcrumb">
+				<a href="">卡管理</a>
+				<a>
+					<cite>电话卡列表</cite>
+				</a>
+			</span>
+			<a class="layui-btn layui-btn-primary layui-btn-small" style="line-height:1.6em;margin-top:3px;float:right" href="javascript:location.replace(location.href);" title="刷新">
+				<i class="layui-icon" style="line-height:38px">&#xe669;</i>
+			</a>
+		</div>
+		<div class="x-body">
+			<form class="layui-form" action="">
+				<div class="layui-inline">
+				    <div class="layui-input-inline">
+				        <input type="text" name="mobile" onkeyup="this.value=this.value.replace(/\D/g,'')" placeholder="请输入手机号码" maxlength="13" autocomplete="off" class="layui-input">
+				    </div>
+				</div>
+				
+				<div class="layui-inline">
+					<div class="layui-input-inline" style="width: 120px;">
+						<select name="sztid" lay-verify="">
+							<option value="">全部</option>
+							<option value="0">可选号</option>
+							<option value="2">临时占位</option>
+							<option value="8">已下架</option>
+						</select> 
+					</div>
+				</div>
+			
+			    <div class="layui-inline">
+			        <div class="layui-input-inline">
+			            <button class="layui-btn" lay-submit="" lay-filter="simcardAdminSearch"><i class="layui-icon">&#xe615;</i></button>
+			            <button type="reset" class="layui-btn layui-btn-primary" onclick="Refresh()">重置</button>
+			        </div>
+			    </div>
+			</form>
+			
+			<table class="layui-hide" id="simcardAdminInfo" lay-filter="simcardAdminID"></table>
+			
+			<script type="text/html" id="cz">
+				{{# if(d.sztid == 2 || d.sztid == 8){ }}
+					<button type="button" class="layui-btn layui-btn-sm layui-btn-normal" lay-event="simcardKfEdit" style="cursor:not-allowed;background-color:#D3D3D3;" disabled>设置</button>
+				{{# } else { }}
+					<button type="button" class="layui-btn layui-btn-sm layui-btn-normal" lay-event="simcardKfEdit">设置</button>
+				{{# } }}
+			</script>
+		</div>
+		<br/>
+		<div class="footer">
+			<div class="copyright" style="color: aliceblue;">© 2021 -
+				<script>
+					var time = new Date();
+					var year = time.getFullYear();
+					document.write(year);
+				</script> 迷礼商城 版权所有
+			</div>
+		</div>
+		<script src="../common/commonJs.js"></script>
+		
+		<script src="../js/simcardListAdmin.js"></script>
+	</body>
+</html>

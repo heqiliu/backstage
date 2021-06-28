@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>迷礼商城_管理后台</title>
+
+		<script src="../common/commonCss.js"></script>
+	</head>
+	<body>
+		<div class="x-nav">
+			<span class="layui-breadcrumb">
+				<a href="spListAdmin.html">任务管理</a>
+				<a>
+					<cite>手工任务</cite>
+				</a>
+			</span>
+			<a class="layui-btn layui-btn-primary layui-btn-small" style="line-height:1.6em;margin-top:3px;float:right" href="javascript:location.replace(location.href);" title="刷新">
+				<i class="layui-icon" style="line-height:38px">&#xe669;</i>
+			</a>
+		</div>
+		<div class="x-body">
+			<button class="layui-btn data-add-btn" id="rwAdd"><i class="layui-icon"></i>添加</button>
+			
+			<table class="layui-hide" id="rwAdminInfo" lay-filter="rwAdminID"></table>
+			
+			<script type="text/html" id="cz">
+				<input type="checkbox" name="swh_tj" value="{{d.swh_tj}}" title="推荐" lay-filter="rwSwhtjUpd" {{ d.swh_tj == 1 ? 'checked' : '' }}>&nbsp;&nbsp;
+				
+				<input type="checkbox" name="swh_kcf" value="{{d.swh_kcf}}" title="重复" lay-filter="rwSwhkcfUpd" {{ d.swh_kcf == 1 ? 'checked' : '' }}>&nbsp;
+				
+				<input type="checkbox" name="rwztid" value="{{d.rwztid}}" title="上架" lay-filter="rwztUpd" {{ d.rwztid == 4 ? 'checked' : '' }}>&nbsp;
+				
+				{{# if(d.rwztid == 4){ }}
+					<button type="button" class="layui-btn layui-btn-sm layui-btn-normal" lay-event="rwXjjfGwjfEdit" style="cursor:not-allowed;background-color:#D3D3D3;" disabled>设置</button>
+				{{# } else { }}
+					<button type="button" class="layui-btn layui-btn-sm layui-btn-normal" lay-event="rwXjjfGwjfEdit">设置</button>
+				{{# } }}
+			</script>
+			
+			<script type="text/html" id="icon_url">
+				{{# if(d.icon_url === undefined || d.icon_url === '' || d.icon_url === null){ }} 
+					暂无图片
+				{{# } else { }}
+					<img src="{{d.icon_url}}" style="display:none" id="userImg">
+				{{# } }}
+			</script>
+			
+			<script type="text/html" id="img1">
+				{{# if(d.img1 === undefined || d.img1 === '' || d.img1 === null){ }} 
+					暂无图片 
+				{{# } else { }}
+					<img src="{{d.img1}}" style="display:none" id="userImg">
+				{{# } }}
+			</script>
+			
+			<script type="text/html" id="img2">
+				{{# if(d.img2 === undefined || d.img2 === '' || d.img2 === null){ }} 
+					暂无图片
+				{{# } else { }}
+					<img src="{{img2}}" style="display:none" id="userImg">
+				{{# } }}
+			</script>
+			
+			<script type="text/html" id="img3">
+				{{# if(d.img3 === undefined || d.img3 === '' || d.img3 === null){ }} 
+					暂无图片 
+				{{# } else { }}
+					<img src="{{d.img3}}" style="display:none" id="userImg">
+				{{# } }}
+			</script>
+		</div>
+		<br/>
+		<div class="footer">
+			<div class="copyright" style="color: aliceblue;">© 2021 -
+				<script>
+					var time = new Date();
+					var year = time.getFullYear();
+					document.write(year);
+				</script> 迷礼商城 版权所有
+			</div>
+		</div>
+		<script src="../common/commonJs.js"></script>
+
+		<script src="../js/rwListAdmin.js"></script>
+	</body>
+</html>

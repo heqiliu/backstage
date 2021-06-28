@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>真实汇_管理后台</title>
+
+		<script src="../common/commonCss.js"></script>
+	</head>
+	<body>
+		<div class="x-nav">
+			<span class="layui-breadcrumb">
+			<a href="">智能柜管理</a>
+			<a>
+			  <cite>智能柜列表</cite></a>
+		  </span>
+			<a class="layui-btn layui-btn-primary layui-btn-small" style="line-height:1.6em;margin-top:3px;float:right" href="javascript:location.replace(location.href);" title="刷新">
+				<i class="layui-icon" style="line-height:38px">&#xe669;</i></a>
+		</div>
+		<div class="x-body">
+			<form class="layui-form" action="">
+				<div class="layui-inline">
+					<div class="layui-input-inline">
+						<input type="text" name="userid" placeholder="请输入用户账号" onkeyup="this.value=this.value.replace(/\D/g,'')" autocomplete="off" class="layui-input">
+					</div>
+				</div>
+				
+				<div class="layui-inline">
+					<div class="layui-input-inline">
+						<button class="layui-btn" lay-submit="" lay-filter="search"><i class="layui-icon">&#xe615;</i></button>
+						<button type="reset" class="layui-btn layui-btn-primary" onclick="Refresh()">重置</button>
+					</div>
+				</div>
+			</form>
+
+			<table class="layui-hide" id="userInfo" lay-filter="userID"></table>
+
+			<script type="text/html" id="pic_url">
+				{{# if(d.pic_url === undefined || d.pic_url === '' || d.pic_url === null){ }} 
+					暂无图片 
+				{{# } else { }}
+					<img src="{{d.pic_url}}" style="display:none" id="userImg">
+				{{# } }}
+			</script>
+		</div>
+		<br/>
+		
+		<div class="footer">
+			<div class="copyright" style="color: aliceblue;">© 2021 -
+				<script>
+					var time = new Date();
+					var year = time.getFullYear();
+					document.write(year);
+				</script> 真实汇 版权所有
+			</div>
+		</div>
+		<script src="../common/commonJs.js"></script>
+
+		<script src="../js/zngListAdmin.js"></script>
+	</body>
+</html>

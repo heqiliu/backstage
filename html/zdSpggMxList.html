@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>迷礼商城_管理后台</title>
+
+		<script src="../common/commonCss.js"></script>
+		
+		<style>
+			.layui-breadcrumb a {
+			    color: #0055ff!important;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="x-nav">
+			<span class="layui-breadcrumb">
+				<a href="zdSpggListAdmin.html">规格列表</a>
+				<a>
+					<cite><b style="color: #C9302C;"><font id="DDID"></font></b>&nbsp;明细列表</cite>
+				</a>
+			</span>
+			<a class="layui-btn layui-btn-primary layui-btn-small" style="line-height:1.6em;margin-top:3px;float:right" href="javascript:location.replace(location.href);" title="刷新">
+				<i class="layui-icon" style="line-height:38px">&#xe669;</i>
+			</a>
+		</div>
+		<div class="x-body">
+			<button class="layui-btn data-add-btn" id="zdSpggMxAdd"><i class="layui-icon"></i>添加</button>
+
+			<table class="layui-hide" id="zdSpggMxInfo" lay-filter="zdSpggMxID"></table>
+			
+			<script type="text/html" id="cz">
+				<button type="button" class="layui-btn layui-btn-sm layui-btn-normal" lay-event="zdSpggMxEdit">编辑</button>
+				<button type="button" class="layui-btn layui-btn-sm layui-btn-danger" lay-event="zdSpggMxDel">删除</button>
+			</script>
+		</div>
+		<br/>
+		<div class="footer">
+			<div class="copyright" style="color: aliceblue;">© 2021 -
+				<script>
+					var time = new Date();
+					var year = time.getFullYear();
+					document.write(year);
+				</script> 迷礼商城 版权所有
+			</div>
+		</div>
+		<script src="../common/commonJs.js"></script>
+
+		<script src="../js/zdSpggMxList.js"></script>
+	</body>
+</html>

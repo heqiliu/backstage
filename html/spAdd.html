@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>迷礼商城_管理后台</title>
+
+		<script src="../common/commonCss.js"></script>
+	</head>
+	<body>
+		<div class="x-body">
+			<form class="layui-form">
+				<div class="layui-form-item">
+					<label class="layui-form-label">商品名称<span class="x-red"> *</span></label>
+					<div class="layui-input-block">
+						<input type="text" name="spmc" autocomplete="off" maxlength="20" lay-verify="required" lay-reqtext="商品名称是必填项，岂能为空？" placeholder="请输入商品名称" class="layui-input">
+					</div>
+				</div>
+				
+				<div class="layui-row">
+				    <div class="layui-col-xs6">
+						<label class="layui-form-label">商品类别<span class="x-red"> *</span></label>
+						<div class="layui-input-block">
+							<select class="layui-input" name="spflid" lay-filter="spflidSelect" autocomplete="off" lay-verify="required" lay-reqtext="商品类别不能为空,请选择"></select>
+						</div>
+				    </div>
+				    <div class="layui-col-xs6">
+						<label class="layui-form-label">商品规格1<span class="x-red"> *</span></label>
+						<div class="layui-input-block">
+							<select class="layui-input" name="spgg1" lay-filter="spgg1Select" autocomplete="off" lay-verify="required" lay-reqtext="商品规格1不能为空,请选择"></select>
+						</div>
+				    </div>
+				</div>
+				<br />
+				
+				<div class="layui-row">
+				    <div class="layui-col-xs6">
+						<label class="layui-form-label">商品规格2<span class="x-red"> *</span></label>
+						<div class="layui-input-block">
+							<select class="layui-input" name="spgg2" lay-filter="spgg2Select" autocomplete="off" lay-verify="required" lay-reqtext="商品规格2不能为空,请选择"></select>
+						</div>
+				    </div>
+				    <div class="layui-col-xs6">
+						<label class="layui-form-label">商品规格3<span class="x-red"> *</span></label>
+						<div class="layui-input-block">
+							<select class="layui-input" name="spgg3" lay-filter="spgg3Select" autocomplete="off" lay-verify="required" lay-reqtext="商品规格3不能为空,请选择"></select>
+						</div>
+				    </div>
+				</div>
+				<br />
+				
+				<div class="layui-row">
+				    <div class="layui-col-xs6">
+						<label class="layui-form-label">零售价<span class="x-red"> *</span></label>
+						<div class="layui-input-block">
+							<input type="text" name="jylsj" autocomplete="off" maxlength="7" onkeyup="value=value.replace(/[^\d.]{2,}/g,'')" lay-verify="required" lay-reqtext="零售价是必填项，岂能为空？" placeholder="请输入零售价(元)" class="layui-input">
+						</div>
+				    </div>
+				    <div class="layui-col-xs6">
+						<label class="layui-form-label">库存数量<span class="x-red"> *</span></label>
+						<div class="layui-input-block">
+							<input type="text" name="kcsl" autocomplete="off" maxlength="8" onkeyup="this.value=this.value.replace(/\D/g,'')" lay-verify="required" lay-reqtext="库存数量是必填项，岂能为空？" placeholder="请输入库存数量(个)" class="layui-input">
+						</div>
+				    </div>
+				</div>
+				<br />
+
+				<div class="layui-form-item ">
+					<label class="layui-form-label">商品图片<span class="x-red"> *</span></label>
+					<div class="layui-input-block" style="display: flex;">
+						<input type="text" id="icon_url" autocomplete="off" maxlength="255" placeholder="请输入/上传商品图片URL" class="layui-input">
+						<button type="button" class="layui-btn" id="iconURL">
+						  <i class="layui-icon">&#xe67c;</i>上传图片
+						</button>
+					</div>
+				</div>
+
+				<div class="layui-form-item layui-form-text ">
+					<label class="layui-form-label">商品说明</label>
+					<div class="layui-input-block">
+						<textarea name="spsm" rows="2" placeholder="请输入商品说明"  maxlength="150" class="layui-textarea"></textarea>
+					</div>
+				</div>
+				
+				<div class="layui-form-item layui-form-text ">
+					<label class="layui-form-label">备注</label>
+					<div class="layui-input-block">
+						<textarea name="bz" rows="2" placeholder="请输入备注" maxlength="150" class="layui-textarea"></textarea>
+					</div>
+				</div>
+
+				<div class="layui-form-item ">
+					<div class="layui-input-block ">
+						<button type="reset " class="layui-btn layui-btn-primary ">重置</button>
+						<button type="submit" class="layui-btn" lay-submit="" lay-filter="spAddSubmit">立即提交</button>
+					</div>
+				</div>
+			</form>
+		</div>
+		<script src="../common/commonJs.js"></script>
+		<script src="../js/qinnu.js"></script>
+
+		<script src="../js/spAdd.js"></script>
+	</body>
+
+</html>
